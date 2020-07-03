@@ -1,7 +1,7 @@
 CONFIG += testcase
 TARGET = tst_modelview
 QT += testlib remoteobjects
-#QT -= gui
+QT -= gui
 
 SOURCES += $$PWD/tst_modelview.cpp $$PWD/modeltest.cpp
 HEADERS += $$PWD/modeltest.h
