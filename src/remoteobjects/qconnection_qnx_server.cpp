@@ -154,7 +154,7 @@ void QQnxNativeServerPrivate::thread_func()
 
     qCDebug(QT_REMOTEOBJECT) << "Server thread_func running";
 
-    while (running.load()) {
+    while (running.loadRelaxed()) {
         // wait for messages and pulses
         int rcvid = MsgReceive(attachStruct->chid, &recv_buf, sizeof(_pulse), &msg_info);
         qCDebug(QT_REMOTEOBJECT) << "MsgReceive unblocked.  Rcvid" << rcvid << " Scoid" << msg_info.scoid;
